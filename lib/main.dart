@@ -33,7 +33,7 @@ class HomeActivity extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("First App"),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.lightGreen,
         centerTitle: false,
         elevation: 10.0,
         actions: [
@@ -62,6 +62,34 @@ class HomeActivity extends StatelessWidget {
             icon: Icon(Icons.email),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          MySnackBar("pressed add button", context);
+        },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: "Contact"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        backgroundColor: Colors.grey,
+        onTap: (int index) {
+          if (index == 0) {
+            MySnackBar("Home pressed", context);
+          }
+          if (index == 1) {
+            MySnackBar("message pressed", context);
+          }
+          if (index == 2) {
+            MySnackBar("profile pressed", context);
+          }
+        },
       ),
     );
   }

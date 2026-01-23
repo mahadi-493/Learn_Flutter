@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primaryColor: const Color(0xFF36F46F)),
       darkTheme: ThemeData(primarySwatch: Colors.yellow),
       color: Colors.blue,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: HomeActivity()
     );
   }
@@ -25,7 +25,12 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("First App")),
+      appBar: AppBar(
+        title: Text("First App"),
+        backgroundColor: Colors.red,
+        centerTitle: true,
+        elevation: 10.0,
+      ),
       body: const Text("Hello Flutter"),
     );
   }

@@ -47,7 +47,7 @@ class HomeActivity extends StatelessWidget {
             onPressed: () {
               MySnackBar("comments pressed", context);
             },
-            icon: Icon(Icons.comment),
+            icon: Icon(Icons.insert_comment_outlined),
           ),
           IconButton(
             onPressed: () {
@@ -90,6 +90,14 @@ class HomeActivity extends StatelessWidget {
             MySnackBar("profile pressed", context);
           }
         },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: Text("Mahadi")),
+            ListTile(title: Text("Home")),
+          ],
+        ),
       ),
     );
   }

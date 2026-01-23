@@ -9,7 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeActivity());
+    return MaterialApp(
+      theme: ThemeData(primaryColor: const Color(0xFF36F46F)),
+      darkTheme: ThemeData(primarySwatch: Colors.yellow),
+      color: Colors.blue,
+      debugShowCheckedModeBanner: false,
+      home: HomeActivity()
+    );
   }
 }
 
@@ -19,7 +25,7 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text("First App"),),
+      appBar: AppBar(title: Text("First App")),
       body: const Text("Hello Flutter"),
     );
   }

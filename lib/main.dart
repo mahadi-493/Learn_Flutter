@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primaryColor: const Color(0xFF36F46F)),
       darkTheme: ThemeData(primarySwatch: Colors.yellow),
       color: Colors.blue,
-      debugShowCheckedModeBanner: true,
-      home: HomeActivity()
+      debugShowCheckedModeBanner: false,
+      home: HomeActivity(),
     );
   }
 }
@@ -22,16 +22,47 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
+  MySnackBar(message, context) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("First App"),
         backgroundColor: Colors.red,
-        centerTitle: true,
+        centerTitle: false,
         elevation: 10.0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              MySnackBar("search pressed", context);
+            },
+            icon: Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar("comments pressed", context);
+            },
+            icon: Icon(Icons.comment),
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar("settings pressed", context);
+            },
+            icon: Icon(Icons.settings),
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar("emails pressed", context);
+            },
+            icon: Icon(Icons.email),
+          ),
+        ],
       ),
-      body: const Text("Hello Flutter"),
     );
   }
 }

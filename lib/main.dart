@@ -95,13 +95,11 @@ class HomeActivity extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(child: Text("Mahadi")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Home")),
+            ListTile(leading: Icon(Icons.home), title: Text("Home")),
+            ListTile(leading: Icon(Icons.contact_page), title: Text("Contact")),
+            ListTile(leading: Icon(Icons.email), title: Text("Email")),
+            ListTile(leading: Icon(Icons.person), title: Text("Profile")),
+            ListTile(leading: Icon(Icons.phone), title: Text("Phone")),
           ],
         ),
       ),

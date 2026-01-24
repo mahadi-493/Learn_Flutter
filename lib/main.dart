@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
-  MySnackBar(message, context) {
+  mySnackBar(message, context) {
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text(message)));
@@ -39,25 +39,25 @@ class HomeActivity extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              MySnackBar("search pressed", context);
+              mySnackBar("search pressed", context);
             },
             icon: Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("comments pressed", context);
+              mySnackBar("comments pressed", context);
             },
             icon: Icon(Icons.insert_comment_outlined),
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("settings pressed", context);
+              mySnackBar("settings pressed", context);
             },
             icon: Icon(Icons.settings),
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("emails pressed", context);
+              mySnackBar("emails pressed", context);
             },
             icon: Icon(Icons.email),
           ),
@@ -68,7 +68,7 @@ class HomeActivity extends StatelessWidget {
         elevation: 10,
         child: Icon(Icons.add),
         onPressed: () {
-          MySnackBar("pressed add button", context);
+          mySnackBar("pressed add button", context);
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -81,13 +81,13 @@ class HomeActivity extends StatelessWidget {
         backgroundColor: Colors.grey,
         onTap: (int index) {
           if (index == 0) {
-            MySnackBar("Home pressed", context);
+            mySnackBar("Home pressed", context);
           }
           if (index == 1) {
-            MySnackBar("message pressed", context);
+            mySnackBar("message pressed", context);
           }
           if (index == 2) {
-            MySnackBar("profile pressed", context);
+            mySnackBar("profile pressed", context);
           }
         },
       ),

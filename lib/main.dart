@@ -96,6 +96,12 @@ class HomeActivity extends StatelessWidget {
           children: [
             DrawerHeader(child: Text("Mahadi")),
             ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Home")),
           ],
         ),
       ),

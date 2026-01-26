@@ -143,7 +143,13 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      
+      body: Container(
+        height: 100,
+        width: 100,
+        child: Image.network(
+          "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
+        ),
+      ),
     );
   }
 }

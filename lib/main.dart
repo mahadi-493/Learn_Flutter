@@ -33,7 +33,7 @@ class HomeActivity extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("First App"),
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: const Color.fromARGB(255, 236, 247, 223),
         centerTitle: false,
         elevation: 10.0,
         actions: [
@@ -94,7 +94,21 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Mahadi")),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 228, 240, 237),
+                ),
+                accountName: Text("Mahadi Hasan"),
+                accountEmail: Text("mahadi.themh@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
+                  ),
+                ),
+              ),
+            ),
             ListTile(leading: Icon(Icons.home), title: Text("Home")),
             ListTile(leading: Icon(Icons.contact_page), title: Text("Contact")),
             ListTile(leading: Icon(Icons.email), title: Text("Email")),
@@ -103,6 +117,33 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 228, 240, 237),
+                ),
+                accountName: Text("Mahadi Hasan"),
+                accountEmail: Text("mahadi.themh@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
+                  ),
+                ),
+              ),
+            ),
+            ListTile(leading: Icon(Icons.home), title: Text("Home")),
+            ListTile(leading: Icon(Icons.contact_page), title: Text("Contact")),
+            ListTile(leading: Icon(Icons.email), title: Text("Email")),
+            ListTile(leading: Icon(Icons.person), title: Text("Profile")),
+            ListTile(leading: Icon(Icons.phone), title: Text("Phone")),
+          ],
+        ),
+      ),
+      
     );
   }
 }

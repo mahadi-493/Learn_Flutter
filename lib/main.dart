@@ -28,6 +28,34 @@ class HomeActivity extends StatelessWidget {
     ).showSnackBar(SnackBar(content: Text(message)));
   }
 
+  myAlertDialog(context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Expanded(
+          child: AlertDialog(
+            title: Text("Alert "),
+            content: Text("This is an alert dialog"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Cancel"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
@@ -151,7 +179,7 @@ class HomeActivity extends StatelessWidget {
         children: [
           TextButton(
             onPressed: () {
-              mySnackBar("pressed text button", context);
+              myAlertDialog(context);
             },
             child: Text("Text Button"),
           ),

@@ -30,6 +30,9 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(10.0),
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text("First App"),
@@ -144,28 +147,26 @@ class HomeActivity extends StatelessWidget {
         ),
       ),
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.network(
-              "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
-            ),
+          TextButton(
+            onPressed: () {
+              mySnackBar("pressed text button", context);
+            },
+            child: Text("Text Button"),
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.network(
-              "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
-            ),
+          ElevatedButton(
+            onPressed: () {
+              mySnackBar("pressed elevated button", context);
+            },
+            style: buttonStyle,
+            child: Text("Elevated Button"),
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.network(
-              "https://avatars.githubusercontent.com/u/120239568?s=400&u=fe5866e013a140500148154b91a0681b295f51f8&v=4",
-            ),
+          OutlinedButton(
+            onPressed: () {
+              mySnackBar("This is Outline Button", context);
+            },
+            child: Text("Outline Button"),
           ),
         ],
       ),

@@ -59,6 +59,7 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(double.infinity, 60),
       padding: EdgeInsets.all(10.0),
     );
     return Scaffold(
@@ -174,27 +175,48 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          TextButton(
-            onPressed: () {
-              myAlertDialog(context);
-            },
-            child: Text("Text Button"),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: "Enter First Name",
+                hintText: "Enter your first name",
+                border: OutlineInputBorder(),
+              ),
+            ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              mySnackBar("pressed elevated button", context);
-            },
-            style: buttonStyle,
-            child: Text("Elevated Button"),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: "Enter Last Name",
+                hintText: "Enter your last name",
+                border: OutlineInputBorder(),
+              ),
+            ),
           ),
-          OutlinedButton(
-            onPressed: () {
-              mySnackBar("This is Outline Button", context);
-            },
-            child: Text("Outline Button"),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: "Enter your email",
+                hintText: "Enter your email",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: ElevatedButton(
+              style: buttonStyle,
+              onPressed: () {
+                myAlertDialog(context);
+              },
+              child: Text("Submit"),
+            ),
           ),
         ],
       ),
